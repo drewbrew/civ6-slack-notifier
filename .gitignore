@@ -1,0 +1,4 @@
+.vercel
+.env
+user-map.json
+node_modules

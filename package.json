@@ -1,0 +1,20 @@
+{
+  "name": "civ6-slack-notifier",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "npm-run-all --parallel start send-dryRun",
+    "start": "vercel dev",
+    "send-message": "curl -X POST -H 'Content-type: application/json' --data '{\"value1\":\"TEST_GAME\", \"value2\":\"hodorswit\", \"value3\":\"42\"}' https://civ6-slack-notifier.vercel.app/api/webhook",
+    "send-dryRun": "sleep 3 && curl -X POST -H 'Content-type: application/json' --data '{\"value1\":\"TEST_GAME\", \"value2\":\"TEST_USER1\", \"value3\":\"42\"}' http://localhost:3000/api/webhook?dryRun=true"
+  },
+  "author": "Robbie Hickey <robbie.d.hickey@gmail.com> (https://github.com/robbiedhickey)",
+  "license": "MIT",
+  "dependencies": {
+    "@logtail/js": "^0.1.7",
+    "node-fetch": "2.6.5"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
